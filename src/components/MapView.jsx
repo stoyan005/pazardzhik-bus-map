@@ -3,7 +3,7 @@ import { MapContainer, TileLayer } from "react-leaflet";
 export default function MapView({ children }) {
   return (
     <MapContainer
-      center={[42.192, 24.333]} // Pazardzhik center
+      center={[42.192, 24.333]} // Center of Pazardzhik
       zoom={13}
       style={{ height: "100vh", width: "100%" }}
     >

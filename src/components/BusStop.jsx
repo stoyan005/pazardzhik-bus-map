@@ -18,8 +18,8 @@ export default function BusStop({ stop, onStopClick }) {
       icon={busStopIcon}
       eventHandlers={{
         click: (e) => {
-          e.originalEvent.stopPropagation(); // prevent map click
-          onStopClick(stop.lines); // show route
+          e.originalEvent.stopPropagation(); // prevent map click //
+          onStopClick(stop.lines); // shows the route //
         },
       }}
     >
