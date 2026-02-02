@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap');
+
+html,
+body {
+	font-family: 'Radio Canada', sans-serif;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.hero {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	background: url('../assets/pazardzhik.jpg') no-repeat center center;
+	background-size: cover;
+}
+
+.overlay {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+}
+
+.content {
+	max-width: 900px;
+	padding: 20px;
+	color: #ffffff;
+}
+
+.title {
+	font-size: 4rem;
+	font-weight: 900;
+	margin-bottom: 2rem;
+	line-height: 1.2;
+}
+
+.subtitle {
+	font-size: 1.5rem;
+	margin-bottom: 2.5rem;
+	opacity: 0.9;
+	line-height: 1.6;
+}
+
+.buttonGroup {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 3rem;
+	gap: 20px;
+}
+
+.primaryBtn {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: #ffffff;
+	padding: 1.1rem 5rem;
+	border-radius: 10px;
+	font-size: 1.2rem;
+	cursor: pointer;
+	border: none;
+	background: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(10px);
+	transition: all 0.2s ease-in-out;
+}
+
+.primaryBtn:hover {
+	transform: scale(1.05);
+}
+
+.infoBoxes {
+	display: flex;
+	align-items: center; /* vertically center everything inside each box */
+	justify-content: center;
+	gap: 30px;
+	color: #ffffff;
+	font-size: 0.9rem;
+	opacity: 0.8;
+}
+
+.icon {
+	display: inline-block; /* better than block inside flex */
+	width: 1.25rem;
+	height: 1.25rem;
+	vertical-align: middle; /* aligns with text baseline */
+	margin: 0; /* remove manual margin */
+}
