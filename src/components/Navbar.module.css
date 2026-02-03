@@ -18,21 +18,8 @@
 .logo {
 	display: flex;
 	align-items: center;
-	font-size: 1rem;
-	font-weight: 800;
-	text-transform: uppercase;
-	letter-spacing: 5px;
-	color: #ffffff;
-	gap: 10px;
-}
-
-.logo::before {
-	content: '';
-	width: 10px;
-	height: 10px;
-	background: #00ff88;
-	border-radius: 50%;
-	box-shadow: 0 0 10px #00ff88;
+	height: 40px;
+	width: auto;
 }
 
 .link {
