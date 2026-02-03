@@ -1,4 +1,5 @@
 import styles from './Home.module.css';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
 	return (
@@ -10,9 +11,8 @@ export default function Home() {
 						Пазарджик за всеки: Проектиране на улици и пространства, където всяка
 						стъпка е достъпна и всеки гражданин може да се движи свободно.
 					</p>
-
 					<div className={styles.buttonGroup}>
-						<button className={styles.primaryBtn}>
+						<Link to="/map" className={styles.primaryBtn}>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								width="24"
@@ -30,8 +30,8 @@ export default function Home() {
 								<path d="M9 3.236v15" />
 							</svg>
 							Виж карта за Автобуси
-						</button>
-						<button className={styles.primaryBtn}>
+						</Link>
+						<Link to="/map" className={styles.primaryBtn}>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								width="24"
@@ -49,7 +49,7 @@ export default function Home() {
 								<path d="M9 3.236v15" />
 							</svg>
 							Виж карта за Тролей
-						</button>
+						</Link>
 					</div>
 
 					<div className={styles.infoBoxes}>
