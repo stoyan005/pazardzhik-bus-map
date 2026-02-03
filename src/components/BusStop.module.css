@@ -1,0 +1,44 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	padding: 0.5rem 1rem;
+	gap: 10px;
+	min-width: 100px;
+}
+
+.header {
+	font-weight: 800;
+	font-size: 16px;
+}
+
+.label {
+	font-size: 14px;
+	color: #585858;
+}
+
+.lines {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	margin-top: 5px;
+}
+
+.lineItem {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.busIcon {
+	width: 24px;
+	height: 24px;
+	color: #000000;
+}
+
+.badge {
+	padding: 4px 10px;
+	border-radius: 14px;
+	font-weight: 700;
+	color: white;
+	font-size: 16px;
+}

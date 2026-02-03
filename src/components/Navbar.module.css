@@ -1,19 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap');
 
+* {
+	font-family: 'Radio Canada', sans-serif;
+}
+
 .nav {
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1.25rem 20rem;
-	background: #1c1c1c;
+	padding: 1.25rem 15rem;
+	background: #181722;
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+	z-index: 1000;
 }
 
 .logo {
 	display: flex;
 	align-items: center;
-	font-family: 'Radio Canada', sans-serif;
-	font-size: 1.25rem;
+	font-size: 1rem;
 	font-weight: 800;
 	text-transform: uppercase;
 	letter-spacing: 5px;
@@ -31,17 +36,21 @@
 }
 
 .link {
-	font-family: 'Radio Canada', sans-serif;
 	text-decoration: none;
-	color: #ffffff;
+	color: #bdbdbd;
 	padding: 0.6rem 2rem;
 	font-size: 1rem;
 	font-weight: 600;
+	border-radius: 10px;
 	text-transform: uppercase;
 	transition: all 0.3s ease;
-	border-radius: 6px;
 }
 
 .link:hover {
+	color: #ffffff;
 	background: #24242b;
+}
+
+.leaflet-container {
+	z-index: 0;
 }

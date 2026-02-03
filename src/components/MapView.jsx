@@ -5,7 +5,7 @@ export default function MapView({ children }) {
 		<MapContainer
 			center={[42.192, 24.333]}
 			zoom={13}
-			style={{ height: '100vh', width: '100%' }} // FULL SCREEN
+			style={{ height: 'calc(100vh - 80px)', width: '100%' }}
 		>
 			<TileLayer
 				attribution="&copy; OpenStreetMap contributors"
