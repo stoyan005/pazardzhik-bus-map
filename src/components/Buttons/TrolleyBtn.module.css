@@ -26,9 +26,7 @@
 
 @media (max-width: 768px) {
 	.primaryBtn {
-		width: 100%;
-		padding: 0.9rem 1.5rem;
-		font-size: 1rem;
+		font-size: 1.25rem;
 		justify-content: center;
 	}
 
