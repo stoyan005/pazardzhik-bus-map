@@ -79,3 +79,10 @@
 		padding: 0.1rem 1rem;
 	}
 }
+
+@media (max-width: 375px) {
+	.link {
+		font-size: 0.65rem;
+		padding: 0.5rem 1rem;
+	}
+}
