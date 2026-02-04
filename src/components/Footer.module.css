@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap');
+
+* {
+	font-family: 'Noto Sans', sans-serif;
+}
+
+.footer {
+	background: #181722;
+	color: rgb(209, 209, 209);
+	padding: 25px 40px;
+}
+
+.main_content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.legal {
+	display: flex;
+	gap: 20px;
+}
+
+.main_content p {
+	margin: 0;
+	font-size: 14px;
+	white-space: nowrap;
+	color: deeppink;
+}

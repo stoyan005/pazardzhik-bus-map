@@ -5,7 +5,7 @@ body {
 	font-family: 'Radio Canada', sans-serif;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 .hero {
@@ -63,6 +63,7 @@ body {
 	padding: 1.1rem 3rem;
 	border-radius: 10px;
 	font-size: 1.2rem;
+	font-weight: bold;
 	cursor: pointer;
 	border: none;
 	text-decoration: none;

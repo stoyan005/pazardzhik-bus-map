@@ -1,17 +1,23 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import MapPage from './pages/MapPage';
-import './index.css';
 
 export default function App() {
 	return (
 		<Router>
-			<Navbar />
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/map" element={<MapPage />} />
-			</Routes>
+			<div className="appLayout">
+				<Navbar />
+
+				<div className="appContent">
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/map" element={<MapPage />} />
+					</Routes>
+				</div>
+			</div>
+			<Footer />
 		</Router>
 	);
 }
