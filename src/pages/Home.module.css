@@ -51,29 +51,8 @@ body {
 .buttonGroup {
 	display: flex;
 	justify-content: center;
-	margin-bottom: 3rem;
+	margin-bottom: 2.5rem;
 	gap: 20px;
-}
-
-.primaryBtn {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-	color: #ffffff;
-	padding: 1.1rem 3rem;
-	border-radius: 10px;
-	font-size: 1.2rem;
-	font-weight: bold;
-	cursor: pointer;
-	border: none;
-	text-decoration: none;
-	background: rgba(255, 255, 255, 0.2);
-	backdrop-filter: blur(10px);
-	transition: all 0.2s ease-in-out;
-}
-
-.primaryBtn:hover {
-	transform: scale(1.05);
 }
 
 .infoBoxes {
@@ -85,7 +64,6 @@ body {
 	gap: 50px;
 }
 
-.icon,
 .iconInfo {
 	display: inline-block;
 	vertical-align: middle;

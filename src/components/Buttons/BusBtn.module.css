@@ -1,0 +1,39 @@
+.primaryBtn {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: #ffffff;
+	padding: 1.1rem 3rem;
+	border-radius: 10px;
+	font-size: 1.2rem;
+	font-weight: bold;
+	cursor: pointer;
+	border: none;
+	text-decoration: none;
+	background: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(10px);
+	transition: all 0.3s ease-in-out;
+}
+
+.primaryBtn:hover {
+	transform: scale(1.05);
+}
+
+.icon {
+	width: 24px;
+	height: 24px;
+}
+
+@media (max-width: 768px) {
+	.primaryBtn {
+		width: 100%;
+		padding: 0.9rem 1.5rem;
+		font-size: 1rem;
+		justify-content: center;
+	}
+
+	.icon {
+		width: 20px;
+		height: 20px;
+	}
+}
