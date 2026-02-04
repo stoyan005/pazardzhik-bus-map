@@ -1,5 +1,4 @@
 import styles from './Home.module.css';
-import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
@@ -15,7 +14,7 @@ export default function Home() {
 							свободно.
 						</p>
 						<div className={styles.buttonGroup}>
-							<Link to="/map" className={styles.primaryBtn}>
+							<Link to="/bus-map" className={styles.primaryBtn}>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									width="24"
@@ -34,7 +33,7 @@ export default function Home() {
 								</svg>
 								Виж карта за Автобуси
 							</Link>
-							<Link to="/map" className={styles.primaryBtn}>
+							<Link to="/trolley-map" className={styles.primaryBtn}>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									width="24"

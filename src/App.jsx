@@ -3,20 +3,18 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import MapPage from './pages/MapPage';
+import TrolleyMap from './pages/TrolleyMap';
 
 export default function App() {
 	return (
 		<Router>
-			<div className="appLayout">
-				<Navbar />
+			<Navbar />
 
-				<div className="appContent">
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/map" element={<MapPage />} />
-					</Routes>
-				</div>
-			</div>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/bus-map" element={<MapPage />} />
+				<Route path="/trolley-map" element={<TrolleyMap />} />
+			</Routes>
 			<Footer />
 		</Router>
 	);

@@ -12,10 +12,10 @@ export default function Navbar() {
 				<Link to="/" className={styles.link}>
 					Начало
 				</Link>
-				<Link to="/map" className={styles.link}>
+				<Link to="/bus-map" className={styles.link}>
 					Карта за автобуси
 				</Link>
-				<Link to="/map" className={styles.link}>
+				<Link to="/trolley-map" className={styles.link}>
 					Карта за тролей
 				</Link>
 			</div>
