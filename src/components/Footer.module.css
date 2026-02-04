@@ -32,8 +32,16 @@
 @media (max-width: 1024px) {
 	.main_content {
 		flex-direction: column;
-		align-items: center;
-		gap: 1rem;
-		padding: 1rem 1rem;
+		text-align: center;
+		gap: 1.5rem;
+	}
+
+	.legal {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.main_content p {
+		white-space: normal;
 	}
 }
