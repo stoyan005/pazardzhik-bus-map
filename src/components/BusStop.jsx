@@ -1,26 +1,24 @@
 import { Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import routes from '../data/routes.json';
 import busStopImg from '../assets/bus-stop.png';
 import styles from './BusStop.module.css';
 
-const busStopicon = new L.Icon({
+const busStopIcon = new L.Icon({
 	iconUrl: busStopImg,
-	iconSize: [32, 32], // size of the icon //
-	iconAnchor: [16, 32], // bottom center touches the map itself //
-	popupAnchor: [0, -32], // popup opens above the icon to display information (will change later) //
-	className: '',
+	iconSize: [32, 32],
+	iconAnchor: [16, 32],
+	popupAnchor: [0, -32],
 });
 
-export default function BusStop({ stop, onStopClick }) {
+export default function BusStop({ stop, routes, onStopClick, linesLabel = 'Линии' }) {
 	return (
 		<Marker
 			position={[stop.lat, stop.lng]}
-			icon={busStopicon}
+			icon={busStopIcon}
 			eventHandlers={{
 				click: (e) => {
-					e.originalEvent.stopPropagation(); // prevents map click //
-					onStopClick(stop.lines); // shows the route //
+					e.originalEvent.stopPropagation();
+					onStopClick(stop.lines);
 				},
 			}}
 		>
@@ -28,7 +26,7 @@ export default function BusStop({ stop, onStopClick }) {
 				<div className={styles.card}>
 					<div className={styles.header}>{stop.name}</div>
 
-					<div className={styles.label}>Автобусни Линии:</div>
+					<div className={styles.label}>{linesLabel}:</div>
 
 					<div className={styles.lines}>
 						{stop.lines.map((lineId) => {

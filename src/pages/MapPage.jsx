@@ -6,7 +6,7 @@ import routes from '../data/routes.json';
 import { useState } from 'react';
 import { MapClickClear } from '../components/MapClickClear';
 
-export default function MapPage() {
+export default function BusMap() {
 	const [visibleRoutes, setVisibleRoutes] = useState([]);
 
 	function handleStopClick(lines) {
@@ -26,7 +26,13 @@ export default function MapPage() {
 					<BusRoute key={r.id} route={r} />
 				))}
 			{stops.map((s, i) => (
-				<BusStop key={i} stop={s} onStopClick={handleStopClick} />
+				<BusStop
+					key={i}
+					stop={s}
+					routes={routes}
+					onStopClick={handleStopClick}
+					linesLabel="Автобусни Линии"
+				/>
 			))}
 		</MapView>
 	);

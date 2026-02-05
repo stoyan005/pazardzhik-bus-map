@@ -1,6 +1,6 @@
 import MapView from '../components/MapView';
 import BusStop from '../components/BusStop';
-import BusRoute from '../components/BusRoute';
+import TrolleyRoute from '../components/TrolleyRoute';
 import trolleyStops from '../data/trolleyStops.json';
 import trolleyRoutes from '../data/trolleyRoutes.json';
 import { useState } from 'react';
@@ -23,10 +23,16 @@ export default function TrolleyMap() {
 			{trolleyRoutes
 				.filter((r) => visibleRoutes.includes(r.id))
 				.map((r) => (
-					<BusRoute key={r.id} route={r} />
+					<TrolleyRoute key={r.id} route={r} />
 				))}
 			{trolleyStops.map((s, i) => (
-				<BusStop key={i} stop={s} onStopClick={handleStopClick} />
+				<BusStop
+					key={i}
+					stop={s}
+					routes={trolleyRoutes}
+					onStopClick={handleStopClick}
+					linesLabel="Тролейбусни Линии"
+				/>
 			))}
 		</MapView>
 	);

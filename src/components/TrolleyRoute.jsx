@@ -1,6 +1,6 @@
 import { Polyline } from 'react-leaflet';
 
-export default function BusRoute({ route }) {
+export default function TrolleyRoute({ route }) {
 	return (
 		<Polyline
 			positions={route.path}
