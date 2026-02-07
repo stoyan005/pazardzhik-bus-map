@@ -51,6 +51,7 @@ body {
 .buttonGroup {
 	display: flex;
 	justify-content: center;
+	flex-wrap: wrap;
 	margin-bottom: 2.5rem;
 	gap: 20px;
 }
@@ -59,6 +60,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
 	font-size: 1.1rem;
 	font-weight: bold;
 	color: #ffffff;
@@ -73,6 +75,20 @@ body {
 	margin: 0.5rem;
 }
 
+@media (max-width: 1024px) {
+	.title {
+		font-size: 3.5rem;
+	}
+
+	.subtitle {
+		font-size: 1.35rem;
+	}
+
+	.infoBoxes {
+		gap: 40px;
+	}
+}
+
 @media (max-width: 768px) {
 	.title {
 		font-size: 3rem;
@@ -80,18 +96,16 @@ body {
 
 	.subtitle {
 		font-size: 1.25rem;
-		margin-bottom: 2rem;
 	}
 
 	.buttonGroup {
 		flex-direction: column;
-		gap: 15px;
+		gap: 20px;
 	}
 
 	.infoBoxes {
 		flex-direction: column;
-		font-size: 1.1rem;
-		gap: 5px;
+		gap: 10px;
 	}
 }
 
@@ -110,7 +124,7 @@ body {
 	}
 
 	.infoBoxes {
-		font-size: 1rem;
-		gap: 5px;
+		font-size: 0.95rem;
+		gap: 10px;
 	}
 }
