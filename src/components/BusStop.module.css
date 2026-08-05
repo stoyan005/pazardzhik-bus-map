@@ -49,18 +49,18 @@
 }
 
 .eyebrow {
-	margin: 0 0 3px;
+	margin: 0 0 0px;
 	color: #64748b;
-	font-size: 11px;
+	font-size: 12px;
 	font-weight: 700;
-	letter-spacing: 0.08em;
+	letter-spacing: 0.1em;
 	text-transform: uppercase;
 }
 
 .title {
 	margin: 0;
 	color: #172033;
-	font-size: 17px;
+	font-size: 18px;
 	font-weight: 800;
 	line-height: 1.25;
 }

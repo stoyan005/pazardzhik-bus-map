@@ -8,30 +8,50 @@ import { MapClickClear } from '../components/MapClickClear';
 
 export default function TrolleyMap() {
 	const [visibleRoutes, setVisibleRoutes] = useState([]);
+	const [selectedRoute, setSelectedRoute] = useState(null);
 
 	function handleStopClick(lines) {
-		setVisibleRoutes(lines);
+		setVisibleRoutes(lines.map(String));
+		setSelectedRoute(null);
+	}
+
+	function handleRouteSelect(routeId) {
+		const id = String(routeId);
+
+		setSelectedRoute((current) => (current === id ? null : id));
 	}
 
 	function clearRoutes() {
 		setVisibleRoutes([]);
+		setSelectedRoute(null);
 	}
 
 	return (
 		<MapView>
 			<MapClickClear onClear={clearRoutes} />
+
 			{trolleyRoutes
-				.filter((r) => visibleRoutes.includes(r.id))
-				.map((r) => (
-					<TrolleyRoute key={r.id} route={r} />
+				.filter((route) => visibleRoutes.includes(String(route.id)))
+				.map((route) => (
+					<TrolleyRoute
+						key={route.id}
+						route={route}
+						isSelected={
+							selectedRoute === null || selectedRoute === String(route.id)
+						}
+						hasSelectedRoute={selectedRoute !== null}
+					/>
 				))}
-			{trolleyStops.map((s, i) => (
+
+			{trolleyStops.map((stop, index) => (
 				<BusStop
-					key={i}
-					stop={s}
+					key={index}
+					stop={stop}
 					routes={trolleyRoutes}
+					selectedRoute={selectedRoute}
 					onStopClick={handleStopClick}
-					linesLabel="Тролейбусни Линии"
+					onRouteSelect={handleRouteSelect}
+					linesLabel="Тролейбусни линии"
 				/>
 			))}
 		</MapView>
