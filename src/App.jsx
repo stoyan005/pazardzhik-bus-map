@@ -4,18 +4,24 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import MapPage from './pages/MapPage';
 import TrolleyMap from './pages/TrolleyMap';
+import './global.css';
 
 export default function App() {
 	return (
 		<Router>
-			<Navbar />
+			<div className="app-layout">
+				<Navbar />
 
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/bus-map" element={<MapPage />} />
-				<Route path="/trolley-map" element={<TrolleyMap />} />
-			</Routes>
-			<Footer />
+				<main className="app-content">
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/bus-map" element={<MapPage />} />
+						<Route path="/trolley-map" element={<TrolleyMap />} />
+					</Routes>
+				</main>
+
+				<Footer />
+			</div>
 		</Router>
 	);
 }

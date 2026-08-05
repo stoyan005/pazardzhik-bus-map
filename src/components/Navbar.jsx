@@ -18,10 +18,10 @@ export default function Navbar() {
 					Начало
 				</Link>
 				<Link to="/bus-map" className={styles.link}>
-					Карта за автобуси
+					Карта за Автобуси
 				</Link>
 				<Link to="/trolley-map" className={styles.link}>
-					Карта за тролей
+					Карта за Тролей
 				</Link>
 			</div>
 

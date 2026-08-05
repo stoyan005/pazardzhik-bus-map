@@ -1,37 +1,62 @@
+import { useState } from 'react';
 import MapView from '../components/MapView';
 import BusStop from '../components/BusStop';
 import BusRoute from '../components/BusRoute';
+import { MapClickClear } from '../components/MapClickClear';
+
 import stops from '../data/stops.json';
 import routes from '../data/routes.json';
-import { useState } from 'react';
-import { MapClickClear } from '../components/MapClickClear';
 
 export default function BusMap() {
 	const [visibleRoutes, setVisibleRoutes] = useState([]);
+	const [selectedRoute, setSelectedRoute] = useState(null);
 
 	function handleStopClick(lines) {
-		setVisibleRoutes(lines);
+		const normalizedLines = lines.map(String);
+
+		setVisibleRoutes(normalizedLines);
+		setSelectedRoute(null);
+	}
+
+	function handleRouteSelect(routeId) {
+		const normalizedRouteId = String(routeId);
+
+		setSelectedRoute((currentRoute) =>
+			currentRoute === normalizedRouteId ? null : normalizedRouteId
+		);
 	}
 
 	function clearRoutes() {
 		setVisibleRoutes([]);
+		setSelectedRoute(null);
 	}
 
 	return (
 		<MapView>
 			<MapClickClear onClear={clearRoutes} />
+
 			{routes
-				.filter((r) => visibleRoutes.includes(r.id))
-				.map((r) => (
-					<BusRoute key={r.id} route={r} />
+				.filter((route) => visibleRoutes.includes(String(route.id)))
+				.map((route) => (
+					<BusRoute
+						key={route.id}
+						route={route}
+						isSelected={
+							selectedRoute === null || selectedRoute === String(route.id)
+						}
+						hasSelectedRoute={selectedRoute !== null}
+					/>
 				))}
-			{stops.map((s, i) => (
+
+			{stops.map((stop) => (
 				<BusStop
-					key={i}
-					stop={s}
+					key={stop.id ?? `${stop.lat}-${stop.lng}`}
+					stop={stop}
 					routes={routes}
+					selectedRoute={selectedRoute}
 					onStopClick={handleStopClick}
-					linesLabel="Автобусни Линии"
+					onRouteSelect={handleRouteSelect}
+					linesLabel="Автобусни линии"
 				/>
 			))}
 		</MapView>
