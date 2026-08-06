@@ -1,24 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap');
-
-* {
-	font-family: 'Radio Canada', sans-serif;
-	box-sizing: border-box;
-}
-
 .nav {
 	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1.25rem 3rem;
+	padding: clamp(0.9rem, 2vw, 1.25rem) clamp(1rem, 5vw, 3rem);
 	background: #181722;
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
-	height: 50px;
+	height: clamp(40px, 6vw, 50px);
 	width: auto;
+	display: block;
 }
 
 .linksContainer {
@@ -31,12 +25,15 @@
 	text-decoration: none;
 	white-space: nowrap;
 	color: #bdbdbd;
-	padding: 0.6rem 2rem;
-	font-size: 1rem;
+	padding: 0.75rem clamp(1rem, 3vw, 2rem);
+	font-size: clamp(0.9rem, 1vw, 1rem);
 	font-weight: 600;
 	border-radius: 10px;
 	text-transform: uppercase;
-	transition: all 0.3s ease;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease,
+		transform 0.2s ease;
 }
 
 .link:hover {
@@ -44,28 +41,64 @@
 	background: #24242b;
 }
 
+.link:active {
+	transform: scale(0.97);
+}
+
 .hamburger {
 	display: none;
 	color: #ffffff;
+	cursor: pointer;
+	padding: 0.4rem;
+	border-radius: 8px;
+	transition: background-color 0.2s ease;
+}
+
+.hamburger:hover {
+	background: rgba(255, 255, 255, 0.08);
 }
 
 .mobileMenu {
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	gap: 1rem;
 	width: 100%;
 	background: #181722;
 	padding: 1rem 0;
+	animation: slideDown 0.25s ease;
+}
+
+@keyframes slideDown {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 @media (max-width: 768px) {
+	.nav {
+		padding: 1rem;
+	}
+
 	.linksContainer {
 		display: none;
 	}
 
 	.hamburger {
 		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.mobileMenu .link {
+		width: 90%;
+		text-align: center;
 	}
 }

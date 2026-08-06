@@ -1,31 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap');
-
-* {
-	font-family: 'Noto Sans', sans-serif;
-}
-
 .footer {
 	background: #181722;
 	color: rgb(209, 209, 209);
-	padding: 25px 40px;
+	padding: clamp(20px, 4vw, 30px);
 }
 
 .main_content {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	max-width: 1200px;
+	width: min(1200px, 95%);
 	margin: 0 auto;
+	gap: 1.5rem;
 }
 
 .legal {
 	display: flex;
-	gap: 20px;
+	gap: clamp(10px, 2vw, 20px);
 }
 
 .main_content p {
 	margin: 0;
-	font-size: 14px;
+	font-size: clamp(12px, 1.5vw, 14px);
 	white-space: nowrap;
 }
 
@@ -33,15 +28,29 @@
 	.main_content {
 		flex-direction: column;
 		text-align: center;
-		gap: 1.5rem;
 	}
 
 	.legal {
 		flex-direction: column;
+		align-items: center;
 		gap: 10px;
 	}
 
 	.main_content p {
 		white-space: normal;
+	}
+}
+
+@media (max-width: 480px) {
+	.footer {
+		padding: 20px 16px;
+	}
+
+	.main_content {
+		width: 100%;
+	}
+
+	.main_content p {
+		font-size: 13px;
 	}
 }

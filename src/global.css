@@ -1,16 +1,18 @@
 html,
 body,
 #root {
-	height: 100%;
+	min-height: 100%;
 	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
 }
 
-.app-layout {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
-.app-content {
-	flex: 1;
+body {
+	font-family: 'Noto Sans', sans-serif;
 }
